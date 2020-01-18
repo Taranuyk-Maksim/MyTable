@@ -1,35 +1,82 @@
 {
   "DayOfWeak" : "Понедельнк",
-  "lessons" : [
+  "monday" : [
     {
-      "lesson1": {
-        "time": "10.00 - 11.20",
-        "lessonsName": "Розробка мобыльних ПЗ",
-        "auditory": "101 р",
-        "type": "лекция",
-        "professors": "Головань К.В."
-      },
-      "lesson2": {
-        "time": "10.00 - 11.20",
-        "lessonsName": "Розробка мобыльних ПЗ",
-        "auditory": "101 р",
-        "type": "лекция",
-        "professors": "Головань К.В."
-      },
-      "lesson3": {
-        "time": "10.00 - 11.20",
-        "lessonsName": "Розробка мобыльних ПЗ",
-        "auditory": "101 р",
-        "type": "лекция",
-        "professors": "Головань К.В."
-      },
-      "lesson4": {
-        "time": "10.00 - 11.20",
-        "lessonsName": "Розробка мобыльних ПЗ",
-        "auditory": "101 р",
-        "type": "лекция",
-        "professors": "Головань К.В."
-      }
+      "time": "fdsfsdf",
+      "lessonsName": "аывоалыволадо ывдлаоывдлоа длвыоа дыво ",
+      "auditory": "101 р",
+      "type": "лекция",
+      "professors": "Головань К.В."
+    },
+    {
+      "time": "10.0 - 11.20",
+      "lessonsName": "Розробка vdvcvsdfds ПЗ",
+      "auditory": "fsdfdsf р",
+      "type": "fsdfsd",
+      "professors": "fsdfsda К.В."
+    },
+    {
+      "time": "10.0 - 11.20",
+      "lessonsName": "Розробка vdvcvsdfds ПЗ",
+      "auditory": "fsdfdsf р",
+      "type": "fsdfsd",
+      "professors": "fsdfsda К.В."
+    },
+    {
+      "time": "10.0 - 11.20",
+      "lessonsName": "Розробка vdvcvsdfds ПЗ",
+      "auditory": "fsdfdsf р",
+      "type": "fsdfsd",
+      "professors": "fsdfsda К.В."
+    }
+  ],
+  "еuesday" : [
+    {
+      "time": "10 - 22",
+      "lessonsName": "fsd мобыльних ПЗ",
+      "auditory": "101 р",
+      "type": "лекция",
+      "professors": "Головань К.В."
+    },
+    {
+      "time": "10.0 - 11.20",
+      "lessonsName": "Розробка vdvcvsdfds ПЗ",
+      "auditory": "fsdfdsf р",
+      "type": "fsdfsd",
+      "professors": "fsdfsda К.В."
+    }
+  ],
+  "еuesday" : [
+    {
+      "time": "10 - 22",
+      "lessonsName": "fsd мобыльних ПЗ",
+      "auditory": "101 р",
+      "type": "лекция",
+      "professors": "Головань К.В."
+    },
+    {
+      "time": "10.0 - 11.20",
+      "lessonsName": "Розробка vdvcvsdfds ПЗ",
+      "auditory": "fsdfdsf р",
+      "type": "fsdfsd",
+      "professors": "fsdfsda К.В."
+    }
+  ],
+  "еuesday" : [
+    {
+      "time": "10 - 22",
+      "lessonsName": "fsd мобыльних ПЗ",
+      "auditory": "101 р",
+      "type": "лекция",
+      "professors": "Головань К.В."
+    },
+    {
+      "time": "10.0 - 11.20",
+      "lessonsName": "Розробка vdvcvsdfds ПЗ",
+      "auditory": "fsdfdsf р",
+      "type": "fsdfsd",
+      "professors": "fsdfsda К.В."
     }
   ]
 }
+

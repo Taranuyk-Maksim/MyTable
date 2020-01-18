@@ -2,45 +2,55 @@ package com.pupsik.mytable
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import org.json.JSONArray
+import org.json.JSONObject
 import java.io.IOException
 import java.io.InputStream
 
 class MainActivity : AppCompatActivity() {
 
-    var array : Array<String> = arrayOf("10","fsjdafjsdfsd","130", "vfjsdfjsdlk", "fdsfsd")
-
-
     fun getStringFromJsonFile() : String{
-
-        var str : String
+        var jsonStrng : String
         try{
-            val a : InputStream = resources.openRawResource(R.raw.day)
-            val size = a.available();
+            val ips : InputStream = resources.openRawResource(R.raw.day)
+            val size = ips.available()
             val buffer = ByteArray(size)
-            a.read(buffer)
-            a.close()
-            str = String(buffer, Charsets.UTF_8)
+            ips.read(buffer)
+            ips.close()
+            jsonStrng = String(buffer, Charsets.UTF_8)
 
         }catch (ex : IOException ){
             ex.printStackTrace()
             return "IOException"
         }
-        return str
+        return jsonStrng
     }
 
-    fun createLess(array : Array<String>) : ArrayList<Lesson>{
+    fun createDay(jsArray: JSONArray) : ArrayList<Lesson>{
 
-        val list = ArrayList<Lesson>()
+        val  day  = ArrayList<Lesson> ()
 
-        list.add(Lesson(array[0],
-            array[1],
-            array[2],
-            array[3],
-            array[4]))
-        return list
+        for(n in 0 until jsArray.length()) {
+            val less: JSONObject = jsArray.getJSONObject(n)
+            day.add(Lesson(
+                less.getString("time"),
+                less.getString("lessonsName"),
+                less.getString("auditory"),
+                less.getString("type"),
+                less.getString("professors")))
+        }
+        return day
+    }
+
+    fun parseJsonToJSONArray(json : String) : JSONArray{
+
+        val jsObj = JSONObject(json.substring(json.indexOf("{"),
+            json.lastIndexOf("}") + 1))
+        val jsArray : JSONArray  = jsObj.getJSONArray("monday")
+
+        return jsArray
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -50,11 +60,7 @@ class MainActivity : AppCompatActivity() {
 
         val dayView: RecyclerView = findViewById(R.id.lessons_of_day)
         dayView.layoutManager = LinearLayoutManager(this)
-        dayView.adapter = LessonAdapter(createLess(array))
-
-//        var tx : TextView = findViewById(R.id.tv)
-//        tx.setText(getStringFromJsonFile())
-
+        dayView.adapter = LessonAdapter(createDay(parseJsonToJSONArray(getStringFromJsonFile())))
     }
 }
 
