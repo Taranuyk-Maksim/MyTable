@@ -1,13 +1,1 @@
-{
-  "lessons" : [
-    {
-      "lesson1" :
-        {
-          "time" : "10.00 - 11.20",
-          "lessonsName" : "Розробка мобыльних ПЗ",
-          "auditory" : "101 р",
-          "type" : "лекция",
-          "professors" : "Головань К.В."
-        }
-}
-}
+{ "lessons" : [ { "lesson1" : { "time" : "10.00 - 11.20", "lessonsName" : "Розробка мобыльних ПЗ", "auditory" : "101 р", "type" : "лекция", "professors" : "Головань К.В." }}}

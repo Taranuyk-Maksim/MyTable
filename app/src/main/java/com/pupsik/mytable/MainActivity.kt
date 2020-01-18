@@ -2,43 +2,58 @@ package com.pupsik.mytable
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.JsonReader
-import android.view.View
-import android.view.ViewGroup
-import android.widget.Adapter
+import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import org.json.JSONArray
-import org.json.JSONObject
-import java.io.File
+import java.io.IOException
+import java.io.InputStream
 
 class MainActivity : AppCompatActivity() {
 
-    val list = ArrayList<Lesson>()
+    var array : Array<String> = arrayOf("10","fsjdafjsdfsd","130", "vfjsdfjsdlk", "fdsfsd")
 
-    val json : String = "{ \"lessons\" : [ { \"lesson1\" : { \"time\" : \"10.00 - 11.20\", \"lessonsName\" : \"Розробка мобыльних ПЗ\", \"auditory\" : \"101 р\", \"type\" : \"лекция\", \"professors\" : \"Головань К.В.\" }}}"
 
-    fun ParseJs(){
-        val jsonObject = JSONObject(json)
-        val jsonArray : JSONArray = jsonObject.getJSONArray("lesson1")
-        val less: JSONObject = jsonArray.getJSONObject(0)
+    fun getStringFromJsonFile() : String{
 
-        var time = less.getString("time")
-        var lesson = less.getString("lessonsName")
+        var str : String
+        try{
+            val a : InputStream = resources.openRawResource(R.raw.day)
+            val size = a.available();
+            val buffer = ByteArray(size)
+            a.read(buffer)
+            a.close()
+            str = String(buffer, Charsets.UTF_8)
 
-        list.add(Lesson(time,lesson,"fsdf","fsdljfds","fdsfdslfjds"))
+        }catch (ex : IOException ){
+            ex.printStackTrace()
+            return "IOException"
+        }
+        return str
+    }
 
+    fun createLess(array : Array<String>) : ArrayList<Lesson>{
+
+        val list = ArrayList<Lesson>()
+
+        list.add(Lesson(array[0],
+            array[1],
+            array[2],
+            array[3],
+            array[4]))
+        return list
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
-        ParseJs()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         val dayView: RecyclerView = findViewById(R.id.lessons_of_day)
         dayView.layoutManager = LinearLayoutManager(this)
-        dayView.adapter = LessonAdapter(list)
+        dayView.adapter = LessonAdapter(createLess(array))
+
+//        var tx : TextView = findViewById(R.id.tv)
+//        tx.setText(getStringFromJsonFile())
 
     }
 }

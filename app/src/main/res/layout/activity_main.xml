@@ -6,6 +6,7 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:id="@+id/tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif"
@@ -14,6 +15,7 @@
         android:layout_marginTop="10dp"
         android:textStyle="bold"
         android:textSize="25sp"/>
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/lessons_of_day"
