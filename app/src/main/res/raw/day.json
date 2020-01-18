@@ -2,29 +2,29 @@
   "DayOfWeak" : "Понедельнк",
   "monday" : [
     {
-      "time": "fdsfsdf",
-      "lessonsName": "аывоалыволадо ывдлаоывдлоа длвыоа дыво ",
+      "time": "8.00 - 9.40",
+      "lessonsName": "Тест пара 11111",
       "auditory": "101 р",
       "type": "лекция",
       "professors": "Головань К.В."
     },
     {
-      "time": "10.0 - 11.20",
-      "lessonsName": "Розробка vdvcvsdfds ПЗ",
+      "time": "10.00 - 11.20",
+      "lessonsName": "Тест пара 22222",
+      "auditory": "fsdfdsf р",
+      "type": "fsdfsd",
+      "professors": "fsdfsda К.В."
+    },
+    {
+      "time": "12.00 - 11.20",
+      "lessonsName": "Тест пара 33333",
       "auditory": "fsdfdsf р",
       "type": "fsdfsd",
       "professors": "fsdfsda К.В."
     },
     {
       "time": "10.0 - 11.20",
-      "lessonsName": "Розробка vdvcvsdfds ПЗ",
-      "auditory": "fsdfdsf р",
-      "type": "fsdfsd",
-      "professors": "fsdfsda К.В."
-    },
-    {
-      "time": "10.0 - 11.20",
-      "lessonsName": "Розробка vdvcvsdfds ПЗ",
+      "lessonsName": "Тест пара 444444",
       "auditory": "fsdfdsf р",
       "type": "fsdfsd",
       "professors": "fsdfsda К.В."
