@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentStatePagerAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.ViewPager
+import com.google.android.material.bottomnavigation.BottomNavigationItemView
 import org.json.JSONArray
 import org.json.JSONObject
 import java.io.IOException
@@ -42,12 +43,13 @@ class MainActivity : AppCompatActivity() {
         val viewPager : ViewPager = findViewById(R.id.vp_list)
         val adapterr = DayViewAdapter(supportFragmentManager)
 
+
         adapterr.addFragment(DayFragment())
         adapterr.addFragment(DayFragment())
         adapterr.addFragment(DayFragment())
 
         viewPager.adapter = adapterr
-
+        val bn : BottomNavigationItemView = findViewById(R.id.bottom_navigstion)
     }
 
 }
