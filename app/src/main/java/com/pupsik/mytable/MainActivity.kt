@@ -15,47 +15,6 @@ import java.io.InputStream
 
 class MainActivity : AppCompatActivity() {
 
-    fun getStringFromJsonFile() : String{
-        val jsonStrng : String
-        try{
-            val ips : InputStream = resources.openRawResource(R.raw.day)
-            val size = ips.available()
-            val buffer = ByteArray(size)
-            ips.read(buffer)
-            ips.close()
-            jsonStrng = String(buffer, Charsets.UTF_8)
-
-        }catch (ex : IOException ){
-            ex.printStackTrace()
-            return "IOException"
-        }
-        return jsonStrng
-    }
-
-    fun createDay(jsArray: JSONArray) : ArrayList<Lesson>{
-
-        val  day  = ArrayList<Lesson> ()
-
-        for(n in 0 until jsArray.length()) {
-            val less: JSONObject = jsArray.getJSONObject(n)
-            day.add(Lesson(
-                less.getString("time"),
-                less.getString("lessonsName"),
-                less.getString("auditory"),
-                less.getString("type"),
-                less.getString("professors")))
-        }
-        return day
-    }
-
-    fun parseJsonToJSONArray(json : String) : JSONArray{
-
-        val jsObj = JSONObject(json.substring(json.indexOf("{"),
-            json.lastIndexOf("}") + 1))
-        val jsArray : JSONArray  = jsObj.getJSONArray("monday")
-
-        return jsArray
-    }
 
     class DayViewAdapter(supportFragmentManager: FragmentManager) : FragmentStatePagerAdapter(supportFragmentManager) {
 
@@ -79,11 +38,6 @@ class MainActivity : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        val dayView: RecyclerView = findViewById(R.id.lessons_of_day)
-        dayView.layoutManager = LinearLayoutManager(this)
-
-        dayView.adapter = LessonAdapter(createDay(parseJsonToJSONArray(getStringFromJsonFile())))
 
         val viewPager : ViewPager = findViewById(R.id.vp_list)
         val adapterr = DayViewAdapter(supportFragmentManager)

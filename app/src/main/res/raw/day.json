@@ -23,8 +23,15 @@
       "professors": "fsdfsda К.В."
     },
     {
-      "time": "10.0 - 11.20",
-      "lessonsName": "Тест пара 444444",
+      "time": "12.00 - 11.20",
+      "lessonsName": "Тест пара 33333",
+      "auditory": "fsdfdsf р",
+      "type": "fsdfsd",
+      "professors": "fsdfsda К.В."
+    },
+    {
+      "time": "12.00 - 11.20",
+      "lessonsName": "Тест пара 33333",
       "auditory": "fsdfdsf р",
       "type": "fsdfsd",
       "professors": "fsdfsda К.В."

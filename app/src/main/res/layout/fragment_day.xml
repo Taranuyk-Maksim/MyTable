@@ -20,7 +20,7 @@
         app:fontFamily="@font/roboto_black" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/lessons_of_day"
+        android:id="@+id/rv_lessons_of_day"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </LinearLayout>
